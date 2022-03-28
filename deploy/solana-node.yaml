@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: solana-node
+  namespace: solana
+spec:
+  selector:
+    matchLabels:
+      app: solana-node
+  template:
+    metadata:
+      labels:
+        app: solana-node
+    spec:
+      containers:
+      - name: solana-node
+        image: solanalabs/solana:v1.10.0
+        env:
+        - name: RUST_BACKTRACE
+          value: "1"
+        - name: LimitNOFILE
+          value: "1000000"
+        ports:
+        - containerPort: 8899
+          name: http
+          protocol: TCP
+        - containerPort: 8900
+          name: websockets
+          protocol: TCP
+        - containerPort: 9900
+          name: reg
+          protocol: TCP
+        - containerPort: 8001
+          name: tcp0
+          protocol: TCP
+        - containerPort: 8901
+          name: tcp1
+          protocol: TCP
+        - containerPort: 8902
+          name: tcp2
+          protocol: TCP
+        - containerPort: 8000
+          name: udp0
+          protocol: UDP
+        - containerPort: 8001
+          name: udp1
+          protocol: UDP
+        - containerPort: 8002
+          name: udp2
+          protocol: UDP
+        - containerPort: 8003
+          name: udp3
+          protocol: UDP
+        - containerPort: 8004
+          name: udp4
+          protocol: UDP
+        - containerPort: 8005
+          name: udp5
+          protocol: UDP
+        - containerPort: 8006
+          name: udp6
+          protocol: UDP
+        - containerPort: 8007
+          name: udp7
+          protocol: UDP
+        - containerPort: 8008
+          name: udp8
+          protocol: UDP
+        - containerPort: 8009
+          name: udp9
+          protocol: UDP

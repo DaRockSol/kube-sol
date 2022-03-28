@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: solana-node-udp
+  namespace: solana
+spec:
+  type: LoadBalancer
+  selector:
+    app: solana-node
+  ports:
+  - port: 8000
+    targetPort: 8000
+    name: udp0
+    protocol: UDP
+  - port: 8001
+    targetPort: 8001
+    name: udp1
+    protocol: UDP
+  - port: 8002
+    targetPort: 8002
+    name: udp2
+    protocol: UDP
+  - port: 8003
+    targetPort: 8003
+    name: udp3
+    protocol: UDP
+  - port: 8004
+    targetPort: 8004
+    name: udp4
+    protocol: UDP
+  - port: 8005
+    targetPort: 8005
+    name: udp5
+    protocol: UDP
+  - port: 8006
+    targetPort: 8006
+    name: udp6
+    protocol: UDP
+  - port: 8007
+    targetPort: 8007
+    name: udp7
+    protocol: UDP
+  - port: 8008
+    targetPort: 8008
+    name: udp8
+    protocol: UDP
+  - port: 8009
+    targetPort: 8009
+    name: udp9
+    protocol: UDP

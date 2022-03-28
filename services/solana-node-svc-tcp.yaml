@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: solana-node-tcp
+  namespace: solana
+spec:
+  type: LoadBalancer
+  selector:
+    app: solana-node
+  ports:
+  - port: 8899
+    targetPort: 8899
+    name: http
+    protocol: TCP
+  - port: 8900
+    targetPort: 8900
+    name: websockets
+    protocol: TCP
+  - port: 9900
+    targetPort: 9900
+    name: reg
+    protocol: TCP
+  - port: 8001
+    targetPort: 8001
+    name: tcp0
+    protocol: TCP
+  - port: 8901
+    targetPort: 8901
+    name: tcp1
+    protocol: TCP
+  - port: 8902
+    targetPort: 8902
+    name: tcp2
+    protocol: TCP
